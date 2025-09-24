@@ -1,5 +1,11 @@
-console.log("Hello i am from server mama");
-console.log("Hello i am from server mama");
-console.log("Hello i am from server mama");
-console.log("Hello i am from server mama");
-console.log("Hello i am from server mama");
+import express from 'express';
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+app.get('/', (req, res) => {
+  res.send('Hello from orebi api server!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
